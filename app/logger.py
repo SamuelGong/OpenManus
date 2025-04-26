@@ -21,6 +21,7 @@ def define_log_level(print_level="INFO", logfile_level="DEBUG", name: str = None
     )  # name a log with prefix name
 
     _logger.remove()
+    # installs a console (stderr) sink, so every log at or above print_level also gets printed to your terminal.
     _logger.add(sys.stderr, level=print_level)
     _logger.add(PROJECT_ROOT / f"logs/{log_name}.log", level=logfile_level)
     return _logger

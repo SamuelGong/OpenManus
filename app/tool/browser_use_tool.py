@@ -132,6 +132,8 @@ class BrowserUseTool(BaseTool, Generic[Context]):
 
     llm: Optional[LLM] = Field(default_factory=LLM)
 
+    headless: bool = False  # Zhifeng
+
     @field_validator("parameters", mode="before")
     def validate_parameters(cls, v: dict, info: ValidationInfo) -> dict:
         if not v:
@@ -140,8 +142,8 @@ class BrowserUseTool(BaseTool, Generic[Context]):
 
     async def _ensure_browser_initialized(self) -> BrowserContext:
         """Ensure browser and context are initialized."""
-        if self.browser is None:
-            browser_config_kwargs = {"headless": False, "disable_security": True}
+        if self.browser is None:  # Zhifeng
+            browser_config_kwargs = {"headless": self.headless, "disable_security": True}
 
             if config.browser_config:
                 from browser_use.browser.browser import ProxySettings
@@ -501,7 +503,9 @@ Page content:
             # Take a screenshot for the state
             page = await ctx.get_current_page()
 
-            await page.bring_to_front()
+            # Zhifeng
+            if not self.headless:
+                await page.bring_to_front()
             await page.wait_for_load_state()
 
             screenshot = await page.screenshot(

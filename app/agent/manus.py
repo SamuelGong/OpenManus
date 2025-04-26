@@ -30,16 +30,9 @@ class Manus(ToolCallAgent):
     # MCP clients for remote tool access
     mcp_clients: MCPClients = Field(default_factory=MCPClients)
 
-    # Add general-purpose tools to the tool collection
-    available_tools: ToolCollection = Field(
-        default_factory=lambda: ToolCollection(
-            PythonExecute(),
-            BrowserUseTool(),
-            StrReplaceEditor(),
-            AskHuman(),
-            Terminate(),
-        )
-    )
+    # Zhifeng
+    do_benchmark: bool = False
+    available_tools: Optional[ToolCollection] = None
 
     special_tool_names: list[str] = Field(default_factory=lambda: [Terminate().name])
     browser_context_helper: Optional[BrowserContextHelper] = None
@@ -49,6 +42,27 @@ class Manus(ToolCallAgent):
         default_factory=dict
     )  # server_id -> url/command
     _initialized: bool = False
+
+    # Zhifeng
+    @model_validator(mode="after")
+    def setup_available_tools(self) -> "Manus":
+        # first three tools are always present
+        tools = [
+            PythonExecute(),
+            StrReplaceEditor(),
+        ]
+        # only include AskHuman if asking is *not* disabled
+        if self.do_benchmark:
+            tools.append(BrowserUseTool(headless=True))
+        else:
+            tools.append(BrowserUseTool(headless=False))
+            tools.append(AskHuman())
+        # always end with Terminate
+        tools.append(Terminate())
+        self.available_tools = ToolCollection(*tools)
+
+        # print(self.disable_asking)
+        return self
 
     @model_validator(mode="after")
     def initialize_helper(self) -> "Manus":
