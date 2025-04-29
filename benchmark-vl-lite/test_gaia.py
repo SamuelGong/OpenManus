@@ -1,6 +1,6 @@
 import os
 import json
-from run_gaia import GAIALoader, read_final_answer
+from run_gaia import GAIALoader
 from scorer import question_scorer
 
 
@@ -8,7 +8,6 @@ def main():
     set_type = "validation"  # cannot be "test"
     input_file = f"gaia_{set_type}.jsonl"
     output_file = f"gaia_{set_type}_scored.jsonl"
-    relax_mode = True
 
     existing_result = {}
     if os.path.exists(input_file):
@@ -27,21 +26,6 @@ def main():
     total_correct = 0
     for level in ["level1", "level2", "level3"]:
         print(f"Processing {level}")
-
-        possible_result = {}
-        if relax_mode:
-            possible_result_dir = os.path.join("logs", f"{set_type} - {level}")
-            if os.path.isdir(possible_result_dir):
-                for filename in os.listdir(possible_result_dir):
-                    if filename.endswith(".txt"):
-                        possible_result_file = os.path.join(possible_result_dir, filename)
-                        final_answer = read_final_answer(possible_result_file)
-                        if final_answer is not None:
-                            possible_problem = filename.replace(' ', '')[:-4]
-                            possible_result[possible_problem] = final_answer
-            print(f"In relax mode. Collect another {len(possible_result)} possible "
-                  f"answers for level {level} from {possible_result_dir}")
-
         test_result[level] = {
             "raw": {}
         }
@@ -59,17 +43,13 @@ def main():
                 "file_name": task["file_name"],
                 "ground_truth": ground_truth
             }
-            if (not (task_id in existing_result and existing_result[task_id]["model_answer"] != "")
-                    and task_id not in possible_result):
+            if task_id not in existing_result:
                 level_all += 1
                 test_result[level]["raw"][task_id] = res
                 print(f"\tResult of {task_id} not found.")
                 continue
 
-            if task_id in existing_result and existing_result[task_id]["model_answer"] != "":
-                model_answer = existing_result[task_id]["model_answer"]
-            else:
-                model_answer = possible_result[task_id]
+            model_answer = existing_result[task_id]["model_answer"]
             correct = question_scorer(ground_truth, model_answer)
             level_all += 1
             if correct:

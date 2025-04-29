@@ -77,16 +77,6 @@ async def call_agent(query, log_path):
         logger.remove(sink_id)
 
 
-def read_final_answer(output_path):
-    with open(output_path, 'r') as f:
-        final_answer = f.read()
-    if "FINAL ANSWER: " in final_answer:
-        final_answer = final_answer.split("FINAL ANSWER: ")[1]
-    else:
-        final_answer = None
-    return final_answer
-
-
 async def main():
     # set_type = "test"  # or "validation"
     set_type = "validation"
@@ -121,7 +111,7 @@ async def main():
                     continue
                 print(f"\t({task_idx + 1}/{task_list_len}) "
                       f"Processing task {task_id}")
-                log_dir = os.path.join('logs', f"{set_type}-{level}")
+                log_dir = os.path.join('../logs', f"{set_type}-{level}")
                 os.makedirs(log_dir, exist_ok=True)
                 log_path = os.path.join(log_dir, f"{task_id}.log")
                 output_path = os.path.join(log_dir, f"{task_id}.txt")
@@ -144,7 +134,10 @@ async def main():
                               f"as no output file generated")
                         continue
                     else:
-                        final_answer = read_final_answer(output_path)
+                        with open(output_path, 'r') as f:
+                            final_answer = f.read()
+                        if "FINAL ANSWER: " in final_answer:
+                            final_answer = final_answer.split("FINAL ANSWER: ")[1]
 
                         if not final_answer:
                             print(f"Retrying task {task_id} for the {retry_time}th time "
