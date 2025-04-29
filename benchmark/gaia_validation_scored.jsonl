@@ -112,7 +112,9 @@
             "4fc2f1ae-8625-45b5-ab34-ad4433bc21f8": {
                 "task_question": "Who nominated the only Featured Article on English Wikipedia about a dinosaur that was promoted in November 2016?",
                 "file_name": "",
-                "ground_truth": "FunkMonk"
+                "ground_truth": "FunkMonk",
+                "model_answer": "FunkMonk",
+                "correct": true
             },
             "5188369a-3bbe-43d8-8b94-11558f909a08": {
                 "task_question": "What writer is quoted by Merriam-Webster for the Word of the Day from June 27, 2022?",
@@ -303,28 +305,36 @@
             "cf106601-ab4f-4af9-b045-5295fe67b37d": {
                 "task_question": "What country had the least number of athletes at the 1928 Summer Olympics? If there's a tie for a number of athletes, return the first in alphabetical order. Give the IOC country code as your answer.",
                 "file_name": "",
-                "ground_truth": "CUB"
+                "ground_truth": "CUB",
+                "model_answer": "CUB",
+                "correct": true
             },
             "a0c07678-e491-4bbc-8f0b-07405144218f": {
                 "task_question": "Who are the pitchers with the number before and after Taish\u014d Tamai's number as of July 2023? Give them to me in the form Pitcher Before, Pitcher After, use their last names only, in Roman characters.",
                 "file_name": "",
-                "ground_truth": "Yoshida, Uehara"
+                "ground_truth": "Yoshida, Uehara",
+                "model_answer": "Yamasaki, Uehara\n",
+                "correct": false
             },
             "7bd855d8-463d-4ed5-93ca-5fe35145f733": {
                 "task_question": "The attached Excel file contains the sales of menu items for a local fast-food chain. What were the total sales that the chain made from food (not including drinks)? Express your answer in USD with two decimal places.",
                 "file_name": "7bd855d8-463d-4ed5-93ca-5fe35145f733.xlsx",
-                "ground_truth": "89706.00"
+                "ground_truth": "89706.00",
+                "model_answer": "89706.00",
+                "correct": true
             },
             "5a0c1adf-205e-4841-a666-7c3ef95def9d": {
                 "task_question": "What is the first name of the only Malko Competition recipient from the 20th Century (after 1977) whose nationality on record is a country that no longer exists?",
                 "file_name": "",
-                "ground_truth": "Claus"
+                "ground_truth": "Claus",
+                "model_answer": "Claus",
+                "correct": true
             }
         },
         "stat": {
             "total": 53,
-            "correct": 8,
-            "score": 0.1509
+            "correct": 12,
+            "score": 0.2264
         }
     },
     "level2": {
@@ -332,7 +342,9 @@
             "c61d22de-5f6c-4958-a7f6-5e9707bd3466": {
                 "task_question": "A paper about AI regulation that was originally submitted to arXiv.org in June 2022 shows a figure with three axes, where each axis has a label word at both ends. Which of these words is used to describe a type of society in a Physics and Society article submitted to arXiv.org on August 11, 2016?",
                 "file_name": "",
-                "ground_truth": "egalitarian"
+                "ground_truth": "egalitarian",
+                "model_answer": "egalitarian,hierarchical",
+                "correct": false
             },
             "17b5a6a3-bc87-42e8-b0fb-6ab0781ef2cc": {
                 "task_question": "I\u2019m researching species that became invasive after people who kept them as pets released them. There\u2019s a certain species of fish that was popularized as a pet by being the main character of the movie Finding Nemo. According to the USGS, where was this fish found as a nonnative species, before the year 2020? I need the answer formatted as the five-digit zip codes of the places the species was found, separated by commas if there is more than one place.",
@@ -342,22 +354,30 @@
             "04a04a9b-226c-43fd-b319-d5e89743676f": {
                 "task_question": "If we assume all articles published by Nature in 2020 (articles, only, not book reviews/columns, etc) relied on statistical significance to justify their findings and they on average came to a p-value of 0.04, how many papers would be incorrect as to their claims of statistical significance? Round the value up to the next integer.",
                 "file_name": "",
-                "ground_truth": "41"
+                "ground_truth": "41",
+                "model_answer": "41",
+                "correct": true
             },
             "14569e28-c88c-43e4-8c32-097d35b9a67d": {
                 "task_question": "In Unlambda, what exact charcter or text needs to be added to correct the following code to output \"For penguins\"? If what is needed is a character, answer with the name of the character. If there are different names for the character, use the shortest. The text location is not needed. Code:\n\n`r```````````.F.o.r. .p.e.n.g.u.i.n.si",
                 "file_name": "",
-                "ground_truth": "backtick"
+                "ground_truth": "backtick",
+                "model_answer": "Unable to determine",
+                "correct": false
             },
             "32102e3e-d12a-4209-9163-7b3a104efe5d": {
                 "task_question": "The attached spreadsheet shows the inventory for a movie and video game rental store in Seattle, Washington. What is the title of the oldest Blu-Ray recorded in this spreadsheet? Return it as appearing in the spreadsheet.",
                 "file_name": "32102e3e-d12a-4209-9163-7b3a104efe5d.xlsx",
-                "ground_truth": "Time-Parking 2: Parallel Universe"
+                "ground_truth": "Time-Parking 2: Parallel Universe",
+                "model_answer": "Gilbert Gopher Goes to Greece",
+                "correct": false
             },
             "3627a8be-a77f-41bb-b807-7e1bd4c0ebdf": {
                 "task_question": "The object in the British Museum's collection with a museum number of 2012,5015.17 is the shell of a particular mollusk species. According to the abstract of a research article published in Science Advances in 2021, beads made from the shells of this species were found that are at least how many thousands of years old?",
                 "file_name": "",
-                "ground_truth": "142"
+                "ground_truth": "142",
+                "model_answer": "150",
+                "correct": false
             },
             "7619a514-5fa8-43ef-9143-83b66a43d7a4": {
                 "task_question": "According to github, when was Regression added to the oldest closed numpy.polynomial issue that has the Regression label in MM/DD/YY?",
@@ -377,7 +397,9 @@
             "87c610df-bef7-4932-b950-1d83ef4e282b": {
                 "task_question": "In April of 1977, who was the Prime Minister of the first place mentioned by name in the Book of Esther (in the New International Version)?",
                 "file_name": "",
-                "ground_truth": "Morarji Desai"
+                "ground_truth": "Morarji Desai",
+                "model_answer": "Unable to determine",
+                "correct": false
             },
             "624cbf11-6a41-4692-af9c-36b3e5ca3130": {
                 "task_question": "What's the last line of the rhyme under the flavor name on the headstone visible in the background of the photo of the oldest flavor's headstone in the Ben & Jerry's online flavor graveyard as of the end of 2022?",
@@ -387,12 +409,16 @@
             "dd3c7503-f62a-4bd0-9f67-1b63b94194cc": {
                 "task_question": "Use density measures from the chemistry materials licensed by Marisa Alviar-Agnew & Henry Agnew under the CK-12 license in LibreText's Introductory Chemistry materials as compiled 08/21/2023.\n\nI have a gallon of honey and a gallon of mayonnaise at 25C. I remove one cup of honey at a time from the gallon of honey. How many times will I need to remove a cup to have the honey weigh less than the mayonaise? Assume the containers themselves weigh the same.",
                 "file_name": "",
-                "ground_truth": "6"
+                "ground_truth": "6",
+                "model_answer": "6",
+                "correct": true
             },
             "df6561b2-7ee5-4540-baab-5095f742716a": {
                 "task_question": "When you take the average of the standard population deviation of the red numbers and the standard sample deviation of the green numbers in this image using the statistics module in Python 3.11, what is the result rounded to the nearest three decimal points?",
                 "file_name": "df6561b2-7ee5-4540-baab-5095f742716a.png",
-                "ground_truth": "17.056"
+                "ground_truth": "17.056",
+                "model_answer": "70.527",
+                "correct": false
             },
             "f0f46385-fc03-4599-b5d3-f56496c3e69f": {
                 "task_question": "In terms of geographical distance between capital cities, which 2 countries are the furthest from each other within the ASEAN bloc according to wikipedia? Answer using a comma separated list, ordering the countries by alphabetical order.",
@@ -402,12 +428,16 @@
             "e4e91f1c-1dcd-439e-9fdd-cb976f5293fd": {
                 "task_question": "I need to fact-check a citation. This is the citation from the bibliography:\n\nGreetham, David. \"Uncoupled: OR, How I Lost My Author(s).\" Textual Cultures: Texts, Contexts, Interpretation, vol. 3 no. 1, 2008, p. 45-46. Project MUSE, doi:10.2979/tex.2008.3.1.44.\n\nAnd this is the in-line citation:\n\nOur relationship with the authors of the works we read can often be \u201cobscured not by a \"cloak of print\" but by the veil of scribal confusion and mis-transmission\u201d (Greetham 45-46).\n\nDoes the quoted text match what is actually in the article? If Yes, answer Yes, otherwise, give me the word in my citation that does not match with the correct one (without any article).",
                 "file_name": "",
-                "ground_truth": "cloak"
+                "ground_truth": "cloak",
+                "model_answer": "obscured,cloak,print,veil,scribal,confusion,mis - transmission",
+                "correct": false
             },
             "56137764-b4e0-45b8-9c52-1866420c3df5": {
                 "task_question": "Which contributor to the version of OpenCV where support was added for the Mask-RCNN model has the same name as a former Chinese head of government when the names are transliterated to the Latin alphabet?",
                 "file_name": "",
-                "ground_truth": "Li Peng"
+                "ground_truth": "Li Peng",
+                "model_answer": "Unable to find contributor",
+                "correct": false
             },
             "8b3379c0-0981-4f5b-8407-6444610cb212": {
                 "task_question": "What is the maximum length in meters of #9 in the first National Geographic short on YouTube that was ever released according to the Monterey Bay Aquarium website? Just give the number.",
@@ -422,12 +452,16 @@
             "a7feb290-76bb-4cb7-8800-7edaf7954f2f": {
                 "task_question": "How many High Energy Physics - Lattice articles listed in January 2020 on Arxiv had ps versions available?",
                 "file_name": "",
-                "ground_truth": "31"
+                "ground_truth": "31",
+                "model_answer": "Unable to determine",
+                "correct": false
             },
             "b4cc024b-3f5e-480e-b96a-6656493255b5": {
                 "task_question": "The photograph in the Whitney Museum of American Art's collection with accession number 2022.128 shows a person holding a book. Which military unit did the author of this book join in 1813? Answer without using articles.",
                 "file_name": "",
-                "ground_truth": "Russian-German Legion"
+                "ground_truth": "Russian-German Legion",
+                "model_answer": "Information not found",
+                "correct": false
             },
             "33d8ea3b-6c6b-4ff1-803d-7e270dea8a57": {
                 "task_question": "What is the minimum number of page links a person must click on to go from the english Wikipedia page on The Lord of the Rings (the book) to the english Wikipedia page on A Song of Ice and Fire (the book series)? In your count, include each link you would click on to get to the page. Use the pages as they appeared at the end of the day on July 3, 2023.",
@@ -442,12 +476,16 @@
             "f46b4380-207e-4434-820b-f32ce04ae2a4": {
                 "task_question": "It is 1999. Before you party like it is 1999, please assist me in settling a bet.\n\nFiona Apple and Paula Cole released albums prior to 1999. Of these albums, which didn't receive a letter grade from Robert Christgau? Provide your answer as a comma delimited list of album titles, sorted alphabetically.",
                 "file_name": "",
-                "ground_truth": "Harbinger, Tidal"
+                "ground_truth": "Harbinger, Tidal",
+                "model_answer": "Harbinger,Tidal",
+                "correct": true
             },
             "05407167-39ec-4d3a-a234-73a9120c325d": {
                 "task_question": "In the 2018 VSCode blog post on replit.com, what was the command they clicked on in the last video to remove extra lines?",
                 "file_name": "",
-                "ground_truth": "Format Document"
+                "ground_truth": "Format Document",
+                "model_answer": "Information not found",
+                "correct": false
             },
             "b9763138-c053-4832-9f55-86200cb1f99c": {
                 "task_question": "Compute the check digit the Tropicos ID for the Order Helotiales would have if it were an ISBN-10 number.",
@@ -497,12 +535,16 @@
             "9f41b083-683e-4dcf-9185-ccfeaa88fa45": {
                 "task_question": "How many pages if the 2023 IPCC report (85 pages version) mentions nuclear energy?",
                 "file_name": "",
-                "ground_truth": "0"
+                "ground_truth": "0",
+                "model_answer": "Unable to obtain data",
+                "correct": false
             },
             "ecbc4f94-95a3-4cc7-b255-6741a458a625": {
                 "task_question": "How many images are there in the latest 2022 Lego english wikipedia article?",
                 "file_name": "",
-                "ground_truth": "13"
+                "ground_truth": "13",
+                "model_answer": "3",
+                "correct": false
             },
             "e9a2c537-8232-4c3f-85b0-b52de6bcba99": {
                 "task_question": "The attached file shows a list of books in the collection of Scribe County Public Library. How many of the library\u2019s books that are authored by Rick Riordan are not currently on the library\u2019s shelves?",
@@ -562,32 +604,44 @@
             "08f3a05f-5947-4089-a4c4-d4bcfaa6b7a0": {
                 "task_question": "Given $x_0 = -5$ and $f(x) = x^3 + 4x^2 - 3x + 8$, what is the smallest $n$ where using Newton's Method $n = n+1$ after rounding to four decimal places?",
                 "file_name": "",
-                "ground_truth": "2"
+                "ground_truth": "2",
+                "model_answer": "3",
+                "correct": false
             },
             "54612da3-fd56-4941-80f4-5eb82330de25": {
                 "task_question": "The attached file shows the locomotives in the collection of a North American railroad museum. How many wheels do the listed steam locomotives have in total?",
                 "file_name": "54612da3-fd56-4941-80f4-5eb82330de25.xlsx",
-                "ground_truth": "60"
+                "ground_truth": "60",
+                "model_answer": "0",
+                "correct": false
             },
             "ded28325-3447-4c56-860f-e497d6fb3577": {
                 "task_question": "This is a secret message my friend gave me. It says where we should meet for our picnic on Friday. The only problem is, it\u2019s encrypted in the Caesar cipher, so I can\u2019t read it. Can you tell me what it says? This is the message:\n\nZsmxsm sc sx Zyvilsec Zvkjk.",
                 "file_name": "",
-                "ground_truth": "Picnic is in Ploybius Plaza."
+                "ground_truth": "Picnic is in Ploybius Plaza.",
+                "model_answer": "Picnic is in Polybius Plaza.",
+                "correct": false
             },
             "6359a0b1-8f7b-499b-9336-840f9ab90688": {
                 "task_question": "What is the area of the green polygon in the attached file? The numbers in purple represent the lengths of the side they are next to.",
                 "file_name": "6359a0b1-8f7b-499b-9336-840f9ab90688.png",
-                "ground_truth": "39"
+                "ground_truth": "39",
+                "model_answer": "Could not calculate area",
+                "correct": false
             },
             "7cc4acfa-63fd-4acc-a1a1-e8e529e0a97f": {
                 "task_question": "The attached spreadsheet contains the sales of menu items for a regional fast-food chain. Which city had the greater total sales: Wharvton or Algrimand?",
                 "file_name": "7cc4acfa-63fd-4acc-a1a1-e8e529e0a97f.xlsx",
-                "ground_truth": "Wharvton"
+                "ground_truth": "Wharvton",
+                "model_answer": "Wharvton",
+                "correct": true
             },
             "d700d50d-c707-4dca-90dc-4528cddd0c80": {
                 "task_question": "Who composed the song that was performed by a rooster and a hamster in separate animated videos at separate tempos with different lyrics? Answer using the format First name Last name.",
                 "file_name": "",
-                "ground_truth": "Roger Miller"
+                "ground_truth": "Roger Miller",
+                "model_answer": "Roger Miller,Rob DeBoer,Anthony Grace,Paul Grace",
+                "correct": false
             },
             "0a3cd321-3e76-4622-911b-0fda2e5d6b1a": {
                 "task_question": "According to the World Bank, which countries had gross savings of over 35% of GDP for every year in the period 2001-2010? Give your answer as a comma-separated list of countries in alphabetical order. Use the countries most common names in english when answering.",
@@ -597,7 +651,9 @@
             "f2feb6a4-363c-4c09-a804-0db564eafd68": {
                 "task_question": "I\u2019m thinking about selling my home, so I want to learn more about how homes in my area sold recently. I live in Pearl City, Hawaii, which is on the island of Oahu. I know two homes near me that sold in 2022 were 2072 Akaikai Loop, and 2017 Komo Mai Drive. Find which of those homes sold for more in 2022, and tell me how much it sold for. Don\u2019t put commas or decimal places in the answer.",
                 "file_name": "",
-                "ground_truth": "900000"
+                "ground_truth": "900000",
+                "model_answer": "Unable to find sold prices",
+                "correct": false
             },
             "0b260a57-3f3a-4405-9f29-6d7a1012dbfb": {
                 "task_question": "On ScienceDirect, what is the difference to 3 decimal places in the sample standard deviations of the number of Reference Works in each Life Science domain compared to Health Sciences as of 2022?",
@@ -642,27 +698,37 @@
             "20194330-9976-4043-8632-f8485c6c71b2": {
                 "task_question": "The YouTube channel Game Grumps began a Let\u2019s Play of the game Sonic the Hedgehog (2006) in the year 2012. Thirty seconds into the first episode, a phrase is shown on the screen in white letters on a red background. How many times does the letter \"E\" appear in this phrase?",
                 "file_name": "",
-                "ground_truth": "4"
+                "ground_truth": "4",
+                "model_answer": "Unable to obtain phrase due to video unavailability",
+                "correct": false
             },
             "4d51c4bf-4b0e-4f3d-897b-3f6687a7d9f2": {
                 "task_question": "This spreadsheet contains a list of clients for a retractable awning company. Each client has ordered a new awning for the back of their house within the last 90 days. The company makes different designs depending on whether the awning is made to block sunrises or sunsets. In this region, houses with odd-numbered street addresses face east, and houses with even-numbered street addresses face west. How many of these clients will be receiving the sunset awning design?",
                 "file_name": "4d51c4bf-4b0e-4f3d-897b-3f6687a7d9f2.xlsx",
-                "ground_truth": "8"
+                "ground_truth": "8",
+                "model_answer": "0",
+                "correct": false
             },
             "65638e28-7f37-4fa7-b7b9-8c19bb609879": {
                 "task_question": "The book with the doi 10.1353/book.24372 concerns a certain neurologist. According to chapter 2 of the book, what author influenced this neurologist\u2019s belief in \u201cendopsychic myths\u201d? Give the last name only.",
                 "file_name": "",
-                "ground_truth": "Kleinpaul"
+                "ground_truth": "Kleinpaul",
+                "model_answer": "Unable to access book content due to access check (reCAPTCHA)",
+                "correct": false
             },
             "3ff6b7a9-a5bd-4412-ad92-0cd0d45c0fee": {
                 "task_question": "The longest-lived vertebrate is named after an island.  According to Wikipedia as of January 1, 2021, what is the 2020 estimated population of that island, to the nearest thousand?",
                 "file_name": "",
-                "ground_truth": "56000"
+                "ground_truth": "56000",
+                "model_answer": "4000",
+                "correct": false
             },
             "708b99c5-e4a7-49cb-a5cf-933c8d46470d": {
                 "task_question": "On the DeepFruits fruit detection graph on Connected Papers from 2016, what feature caused the largest bubble to be the size it is?",
                 "file_name": "",
-                "ground_truth": "Citations"
+                "ground_truth": "Citations",
+                "model_answer": "Information not found",
+                "correct": false
             },
             "0a65cb96-cb6e-4a6a-8aae-c1084f613456": {
                 "task_question": "During the first week of August 2015, one of the NASA Astronomy Pictures of the Day shows the lights of a city on the horizon. The namesake of this city also has a landmark building in Chicago named after him. What is the name of the architectural firm that designed this landmark building? Give the first name appearing in the name of the firm as of June 2023.",
@@ -677,17 +743,23 @@
             "0bb3b44a-ede5-4db5-a520-4e844b0079c5": {
                 "task_question": "Consider the following symbols: \ud809\udc1c  \ud809\udc10\ud809\udc1a\n\nThis is a number written using the Mesopotamian/Babylonian number system and represented with Sumerian cuneiform. Convert this number into Arabic numerals as a decimal number.",
                 "file_name": "",
-                "ground_truth": "536"
+                "ground_truth": "536",
+                "model_answer": "21",
+                "correct": false
             },
             "73c1b9fe-ee1d-4cf4-96ca-35c08f97b054": {
                 "task_question": "According to the USGS, in what year was the American Alligator first found west of Texas (not including Texas)?",
                 "file_name": "",
-                "ground_truth": "1954"
+                "ground_truth": "1954",
+                "model_answer": "1976,1977,1993,1994",
+                "correct": false
             },
             "e2d69698-bc99-4e85-9880-67eaccd66e6c": {
                 "task_question": "As of August 2023, who is the only winner of the US version of Survivor to be born in the month of May?",
                 "file_name": "",
-                "ground_truth": "Michele Fitzgerald"
+                "ground_truth": "Michele Fitzgerald",
+                "model_answer": "1",
+                "correct": false
             },
             "a56f1527-3abf-41d6-91f8-7296d6336c3f": {
                 "task_question": "The cover of the August 2021 issue of Vogue shows a famous landmark in the background behind some trees. How tall is this monument in yards, rounded to the nearest yard? Give the number only.",
@@ -702,27 +774,37 @@
             "edd4d4f2-1a58-45c4-b038-67337af4e029": {
                 "task_question": "The attached spreadsheet lists the locomotives owned by a local railroad museum. What is the typical American name for the type of locomotive this museum uses for the Murder Mystery Express?",
                 "file_name": "edd4d4f2-1a58-45c4-b038-67337af4e029.xlsx",
-                "ground_truth": "Berkshire"
+                "ground_truth": "Berkshire",
+                "model_answer": "Required columns not found in the spreadsheet.",
+                "correct": false
             },
             "a26649c6-1cb2-470a-871e-6910c64c3e53": {
                 "task_question": "What is the absolute difference in tens of thousands between the population of chinstrap penguins on the Wikipedia page for penguin species populations as of the end of 2018 and the population recorded in the Nature.com \"global population assessment of the Chinstrap penguin\" article from 2020, assuming two penguins per breeding pair?",
                 "file_name": "",
-                "ground_truth": "116"
+                "ground_truth": "116",
+                "model_answer": "Unable to obtain 2018 population data",
+                "correct": false
             },
             "4d0aa727-86b1-406b-9b33-f870dd14a4a5": {
                 "task_question": "The attached file lists the locomotives owned by a local railroad museum. It gives each locomotive\u2019s identifying number, operating status, and the name of the daily excursion it heads, if operational. What are the odds that today\u2019s Sunset Picnic Trip will use a steam locomotive? Assume that each day\u2019s excursion picks one of its assigned locomotives at random, and express the answer in the form \u201c1 in 4\u201d, \u201c1 in 5\u201d, etc.",
                 "file_name": "4d0aa727-86b1-406b-9b33-f870dd14a4a5.xlsx",
-                "ground_truth": "1 in 3"
+                "ground_truth": "1 in 3",
+                "model_answer": "None",
+                "correct": false
             },
             "d5141ca5-e7a0-469f-bf3e-e773507c86e2": {
                 "task_question": "When was a picture of St. Thomas Aquinas first added to the Wikipedia page on the Principle of double effect? Answer using the format DD/MM/YYYY.",
                 "file_name": "",
-                "ground_truth": "19/02/2009"
+                "ground_truth": "19/02/2009",
+                "model_answer": "Information not found",
+                "correct": false
             },
             "1dcc160f-c187-48c2-b68e-319bd4354f3d": {
                 "task_question": "According to Openreview.net, at the NeurIPS 2022 Conference, how many papers by an author named Yuri were accepted with a \"certain\" recommendation?",
                 "file_name": "",
-                "ground_truth": "3"
+                "ground_truth": "3",
+                "model_answer": "Information not found",
+                "correct": false
             },
             "b2c257e0-3ad7-4f05-b8e3-d9da973be36e": {
                 "task_question": "If this whole pint is made up of ice cream, how many percent above or below the US federal standards for butterfat content is it when using the standards as reported by Wikipedia in 2020? Answer as + or - a number rounded to one decimal place.",
@@ -747,7 +829,9 @@
             "db4fd70a-2d37-40ea-873f-9433dc5e301f": {
                 "task_question": "As of May 2023, how many stops are between South Station and Windsor Gardens on MBTA\u2019s Franklin-Foxboro line (not included)?",
                 "file_name": "",
-                "ground_truth": "10"
+                "ground_truth": "10",
+                "model_answer": "Unable to find the number of stops.",
+                "correct": false
             },
             "853c8244-429e-46ca-89f2-addf40dfb2bd": {
                 "task_question": "In the 2015 Metropolitan Museum of Art exhibition titled after the Chinese zodiac animal of 2015, how many of the \"twelve animals of the Chinese zodiac\" have a hand visible?",
@@ -762,8 +846,8 @@
         },
         "stat": {
             "total": 86,
-            "correct": 0,
-            "score": 0.0
+            "correct": 4,
+            "score": 0.0465
         }
     },
     "level3": {
@@ -776,7 +860,9 @@
             "bec74516-02fc-48dc-b202-55e78d0e17cf": {
                 "task_question": "What is the average number of pre-2020 works on the open researcher and contributor identification pages of the people whose identification is in this file?",
                 "file_name": "bec74516-02fc-48dc-b202-55e78d0e17cf.jsonld",
-                "ground_truth": "26.4"
+                "ground_truth": "26.4",
+                "model_answer": "0",
+                "correct": false
             },
             "00d579ea-0889-4fd9-a771-2c8d79835c8d": {
                 "task_question": "Assuming scientists in the famous youtube video The Thinking Machine (Artificial Intelligence in the 1960s) were interviewed the same year, what is the name of the scientist predicting the sooner thinking machines or robots? Answer using the format First name Last name",
@@ -816,7 +902,9 @@
             "72c06643-a2fa-4186-aa5c-9ec33ae9b445": {
                 "task_question": "What is the volume in milliliters of a system comprised of 0.312 kg Freon-12 refrigerant when placed at the bottom of the Marianas Trench and allowed to stabilize at the Trench's peak temperature, rounded to the nearest mL? Provide your answer as just an integer value.",
                 "file_name": "",
-                "ground_truth": "55"
+                "ground_truth": "55",
+                "model_answer": "201",
+                "correct": false
             },
             "ebbc1f13-d24d-40df-9068-adcf735b4240": {
                 "task_question": "The Latin root of the Yola word \"gimlie\" shares a spelling with a Spanish word. What is the Google translation of the source title for the 1994 example sentence for that word in the Collins Spanish-to-English dictionary online? Answer in plain text, without punctuation.",
@@ -831,7 +919,9 @@
             "3da89939-209c-4086-8520-7eb734e6b4ef": {
                 "task_question": "I was referencing each of the tables in the file from papers that were cited by the \"Trans fatty acid contents in chocolates and chocolate wafers in Turkey\" paper. I lost my own reference sheet and need to know which of the papers each table came from. The file may not use the full table caption. If the references in the\"Trans fatty acid\" paper bibliography were numbered starting with 1, give me the numbers in the order that they would be used to fill the cells in the Excel file from top to bottom, as a comma separated list.",
                 "file_name": "3da89939-209c-4086-8520-7eb734e6b4ef.xlsx",
-                "ground_truth": "8, 29, 22, 1, 8, 26"
+                "ground_truth": "8, 29, 22, 1, 8, 26",
+                "model_answer": "nan, nan, nan, nan, nan, nan",
+                "correct": false
             },
             "8d46b8d6-b38a-47ff-ac74-cda14cf2d19b": {
                 "task_question": "What percentage of the total penguin population according to the upper estimates on english Wikipedia at the end of 2012 is made up by the penguins in this file that don't live on Dream Island or have beaks longer than 42mm? Round to the nearest five decimal places.",
@@ -846,7 +936,9 @@
             "851e570a-e3de-4d84-bcfa-cc85578baa59": {
                 "task_question": "I thought we could try a fun word puzzle together :)\n\nI've got a Boggle board here:\n\nABRL\nEITE\nIONS\nFPEI\n\nI'd like to know the longest word that can be generated from the board. Please find the longest English language word that can be generated from this board. If more than one word of the same length exists at the maximum word length, please report the longest word that comes first, alphabetically. Oh, and I know that there might be different wordlists available for Boggle, so let's please just use the words_alpha dictionary found at https://github.com/dwyl/english-words as the dictionary for our game.",
                 "file_name": "",
-                "ground_truth": "Briniest"
+                "ground_truth": "Briniest",
+                "model_answer": "",
+                "correct": false
             },
             "50f58759-7bd6-406f-9b0d-5692beb2a926": {
                 "task_question": "How many times was a Twitter/X post cited as a reference on the english Wikipedia pages for each day of August in the last June 2023 versions of the pages?",
@@ -881,7 +973,9 @@
             "9e1fc53b-46ff-49a1-9d05-9e6faac34cc5": {
                 "task_question": "A 5-man group made up of one tank, one healer, and three DPS is doing a dungeon that was just released in World of Warcraft. Two are plate wearers and two are cloth wearers. At the final boss, both the tank and the healer are casting holy spells. Ice and fire are being used, each one by a different DPS. A bear from the group is attacking the boss. Metamorphosis is cast. The Kilt of the Forgotten One drops as loot, but no one can use it. If all classes were using their class abilities and all classes are unique, what are the five classes in the group in alphabetical order separated by commas?",
                 "file_name": "",
-                "ground_truth": "Death Knight, Hunter, Paladin, Priest, Warlock"
+                "ground_truth": "Death Knight, Hunter, Paladin, Priest, Warlock",
+                "model_answer": "Druid, Mage, Paladin, Priest, Warlock",
+                "correct": false
             },
             "5f982798-16b9-4051-ab57-cfc7ebdb2a91": {
                 "task_question": "I read a paper about multiwavelength observations of fast radio bursts back in March 2021 on Arxiv, and it had a fascinating diagram of an X-ray time profile. There was a similar burst-1 diagram in another paper from one of the same authors about fast radio bursts back in July 2020, but I can't recall what the difference in seconds in the measured time span was. How many more seconds did one measure than the other? Just give the number.",
@@ -907,7 +1001,7 @@
     },
     "all_stat": {
         "total": 165,
-        "correct": 8,
-        "score": 0.0485
+        "correct": 16,
+        "score": 0.097
     }
 }
